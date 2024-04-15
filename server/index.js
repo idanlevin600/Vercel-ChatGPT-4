@@ -61,7 +61,7 @@ app.post("/", async (req , res) => {
 });
 
 app.post("/compare", async (req , res) => {
-
+    console.log("hii")
     const {message} = req.body;
     console.log(message.question);
     
