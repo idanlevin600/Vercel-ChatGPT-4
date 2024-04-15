@@ -1,3 +1,5 @@
+import { log } from "console";
+
 const chatLog = document.getElementById('chat-log');
         const message = document.getElementById('message');
         const form = document.querySelector('form');
@@ -121,25 +123,34 @@ const chatLog = document.getElementById('chat-log');
                 return res.json()   
             })
             .then(data => {
-                // Parse the JSON string back into an object to format it
-                const jsonData = JSON.parse(data.completion.message.content);
+                // // Parse the JSON string back into an object to format it
+                // const jsonData = JSON.parse(data.completion.message.content);
                 
-                // Convert the JSON object into a formatted string
-                const formattedJson = JSON.stringify(jsonData, null, 2);
+                // // Convert the JSON object into a formatted string
+                // const formattedJson = JSON.stringify(jsonData, null, 2);
                 
-                // Create a new 'pre' element to display the formatted JSON
-                const messageElement = document.createElement('pre');
-                messageElement.classList.add('message');
-                messageElement.classList.add('message--received');
+                // // Create a new 'pre' element to display the formatted JSON
+                // const messageElement = document.createElement('pre');
+                // messageElement.classList.add('message');
+                // messageElement.classList.add('message--received');
                 
-                // Set the text of the 'pre' element to the formatted JSON string
-                messageElement.textContent = formattedJson;
+                // // Set the text of the 'pre' element to the formatted JSON string
+                // messageElement.textContent = formattedJson;
                 
-                // Append the new element to your log container
-                compareCodesLog.appendChild(messageElement);
+                // // Append the new element to your log container
+                // compareCodesLog.appendChild(messageElement);
                 
-                // Scroll to the bottom of the log container
-                compareCodesLog.scrollTop = compareCodesLog.scrollHeight;
+                // // Scroll to the bottom of the log container
+                // compareCodesLog.scrollTop = compareCodesLog.scrollHeight;
+
+                // Assuming 'data' is the object { completion: { message: { content: "..." } } }
+                const messageContent = data.completion.message.content;
+
+                // Use 'messageContent' in your UI or further processing
+                console.log(messageContent); // Debugging the actual message content
+            })
+            .catch(error =>{
+                console.error("Fetch error:", error);
             })        
         })
 

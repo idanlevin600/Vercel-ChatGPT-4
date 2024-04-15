@@ -127,7 +127,6 @@ app.post("/", async (req , res) => {
 
 app.post("/compare", async (req, res) => {
     try {
-        // Mock response to test without actual API call
         res.json({
             completion: { message: { content: "Mock response" } }
         });
@@ -136,6 +135,7 @@ app.post("/compare", async (req, res) => {
         res.status(500).json({ error: error.message });
     }
 });
+
 
 
 
