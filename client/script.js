@@ -42,6 +42,23 @@ const chatLog = document.getElementById('chat-log');
             exampleDiv.innerHTML = code;
             console.log(code);
         }
+
+        fetch("https://vercel-chat-gpt-4-server.vercel.app", {
+                
+            method:'GET', 
+            mode: 'cors',
+            headers:{
+                'Content-Type' : 'application/json'
+            },
+            
+        })
+        .then(res => res.json())  
+        .then((result) =>{
+            console.log('fetch POST = ', result);
+        },
+        (error) =>{
+          console.log("err POST=", error);
+        });
         
         //the compare forms script
         const compareCodesLog = document.getElementById("compare-codes-log");
