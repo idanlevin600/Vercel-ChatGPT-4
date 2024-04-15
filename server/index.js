@@ -8,7 +8,7 @@ dotenv.config();
 
 const openai = new OpenAI({
         
-    apiKey: "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"
+    apiKey: "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"
 });
 
 const pool = mysql.createPool({
