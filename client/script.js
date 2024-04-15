@@ -144,10 +144,10 @@ const chatLog = document.getElementById('chat-log');
                 // compareCodesLog.scrollTop = compareCodesLog.scrollHeight;
 
                 // Assuming 'data' is the object { completion: { message: { content: "..." } } }
-                const messageContent = data.completion.message.content;
+                //const messageContent = data.completion.message.content;
 
                 // Use 'messageContent' in your UI or further processing
-                console.log(messageContent); // Debugging the actual message content
+                console.log("API response:", data); // Debugging the actual message content
             })
             .catch(error =>{
                 console.error("Fetch error:", error);
