@@ -1,4 +1,4 @@
-import { log } from "console";
+//import { log } from "console";
 
 const chatLog = document.getElementById('chat-log');
         const message = document.getElementById('message');
