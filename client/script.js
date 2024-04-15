@@ -86,7 +86,7 @@ const chatLog = document.getElementById('chat-log');
             }                         
             //**** */           
             //fetch('http://localhost:3000/compare', {
-            fetch('https://vercel-chat-gpt-server.vercel.app/compare', {
+            fetch('https://vercel-chat-gpt-4-server.vercel.app/compare', {
                 
                 method:'POST', 
                 mode: 'cors',

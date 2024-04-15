@@ -30,7 +30,7 @@ app.use(bodyParser.json());
 
 // CORS configuration
 const corsOptions = {
-    origin: 'https://vercel-chat-gpt-client.vercel.app', // or use '*' to allow all origins
+    origin: '*', // or use '*' to allow all origins
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true,
