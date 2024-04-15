@@ -114,7 +114,12 @@ const chatLog = document.getElementById('chat-log');
                     message: fullMessageText
                 })
             }) 
-            .then(res => res.json())           
+            .then(res => {
+                if (!res.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return res.json()   
+            })
             .then(data => {
                 // Parse the JSON string back into an object to format it
                 const jsonData = JSON.parse(data.completion.message.content);
