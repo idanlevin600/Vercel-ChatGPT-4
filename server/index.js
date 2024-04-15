@@ -8,7 +8,8 @@ dotenv.config();
 
 const openai = new OpenAI({
         
-    apiKey: "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"
+   
+    apiKey: process.env.OPENAI_API_KEY
 });
 
 const pool = mysql.createPool({
@@ -155,7 +156,33 @@ app.post("/compare", async (req, res) => {
                 Tell me which of these 5 answers is better to answer the question
                 and tell me what is the difference between these 5 codes, 
                 also rate every answer on a scale of 1-10 by your preference.
-                `
+                answer this question in a json format as follow:
+                                     {
+                                     question:{the question i provided},
+                                     answer1: {the first answer i provided},
+                                     score1: {the score for answer number 1 i provided},
+                                     answer2: {the second answer i provided},
+                                     score2: {the score for answer number 2 i provided},
+                                     answer3: {the third answer i provided},
+                                     score3: {the score for answer number 3 i provided},
+                                     answer4: {the fourth answer i provided},
+                                     score4: {the score for answer number 4 i provided},
+                                     answer5: {the fifth answer i provided},
+                                     score5: {the score for answer number 5 i provided},
+                                     better_question: {answer}, 
+                                     why_better: {answer},
+                                     difference_between_question: {answer},
+                                     rating_question1: {answer},
+                                     explanation_for_rating1: {answer},
+                                     rationQuestion2: {answer},
+                                     explanation_for_rating2: {answer}
+                                     rationQuestion3: {answer},
+                                     explanation_for_rating3: {answer}
+                                     rationQuestion4: {answer},
+                                     explanation_for_rating4: {answer}
+                                     rationQuestion5: {answer},
+                                     explanation_for_rating5: {answer}
+                                 }`
             }],
             model: "gpt-3.5-turbo",
         });
