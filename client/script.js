@@ -43,7 +43,7 @@ const chatLog = document.getElementById('chat-log');
             console.log(code);
         }
 
-        fetch("https://vercel-chat-gpt-4-server.vercel.app", {
+        fetch("https://vercel-chat-gpt-4-server.vercel.app/idan", {
                 
             method:'GET', 
             mode: 'cors',

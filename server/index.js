@@ -40,7 +40,7 @@ const corsOptions = {
   // Use the CORS middleware with the specified options
   app.use(cors(corsOptions));
 
-app.get("/", (req, res) => {
+app.get("/idan", (req, res) => {
     res.json("Hello, this is the root of the ChatGPT server.");
 });
 
