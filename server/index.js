@@ -41,7 +41,7 @@ const corsOptions = {
   app.use(cors(corsOptions));
 
 app.get("/", (req, res) => {
-    res.send("Hello, this is the root of the ChatGPT server.");
+    res.json("Hello, this is the root of the ChatGPT server.");
 });
 
 app.post("/", async (req , res) => {
