@@ -37,7 +37,8 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.get("/", (req, res) => {
-    res.send("Hello, this is the root of the ChatGPT server.");
+    //res.send("Hello, this is the root of the ChatGPT server.");
+    res.send(process.env.USER);
 });
 
 app.post("/", async (req, res) => {
